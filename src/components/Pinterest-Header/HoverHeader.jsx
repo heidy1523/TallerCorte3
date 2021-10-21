@@ -12,6 +12,8 @@ const HoverHeader = (props) => {
 
   const [hoyButton, setHoyButton] = useState('white');
 
+  const [RightButton, setRightButton] = useState('white');
+
   const [shareButton, setShareButton] = useState('transparent');
 
   const _stylesHoverHeader={
@@ -25,19 +27,6 @@ const HoverHeader = (props) => {
       display: 'flex'
     },
 
-    shadow: {
-      margin: 0,
-      padding: 0,
-      borderRadius: '16px',
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'black',
-      opacity: '.4',
-      cursor: 'zoom-in',
-      gridColumn: '1/2',
-      gridRow: '1/2',
-      zIndex: 1,
-    },
     save_button: {
       backgroundColor: `${saveButton}`,
       display: 'flex',
@@ -105,6 +94,7 @@ const HoverHeader = (props) => {
       backgroundColor:'#efefef',
       borderWidth: '3px',
       borderRadius:'35px',
+      cursor: 'pointer',
     },
     bell_icon:{
       width: '57px',
@@ -117,6 +107,7 @@ const HoverHeader = (props) => {
       color: 'gray',
       fontSize: 'x-large',
       borderRadius: '50%',
+      cursor: 'pointer',
     },
   
     comments_icon:{
@@ -130,6 +121,7 @@ const HoverHeader = (props) => {
       color: 'gray',
       fontSize: 'x-large',
       borderRadius: '50%',
+      cursor: 'pointer',
     },
   
     user_icon:{
@@ -144,6 +136,7 @@ const HoverHeader = (props) => {
       color: 'gray',
       fontSize: 'x-large',
       borderRadius: '50%',
+      cursor: 'pointer',
     },
     angle_icon:{
       width: '57px',
@@ -168,7 +161,6 @@ const HoverHeader = (props) => {
       <div
         style={_stylesHoverHeader.button_pinterest}
         onMouseEnter={() => {
-          props.setHover('flex');
           setShareButton('1.0');
         }}
         onMouseOut={() => setShareButton('.8')}
@@ -179,7 +171,6 @@ const HoverHeader = (props) => {
       <button
       style={_stylesHoverHeader.save_button}
       onMouseEnter={() => {
-        props.setHover('flex');
         setSaveButton('#AD081B');
       }}
       onMouseOut={() => setSaveButton('black')}
@@ -189,7 +180,6 @@ const HoverHeader = (props) => {
       <button
       style={_stylesHoverHeader.save_button}
       onMouseEnter={() => {
-        props.setHover('flex');
         setHoyButton('#AD081B');
       }}
       onMouseOut={() => setHoyButton('white')}
@@ -208,17 +198,31 @@ const HoverHeader = (props) => {
 
       </div>
 
-      <div style={_stylesHoverHeader.bell_icon}>
+      <div style={_stylesHoverHeader.bell_icon} onMouseEnter={() => {
+          setRightButton('#F0F0F0');
+        }}
+        onMouseOut={() => setRightButton('white')}>
           <FontAwesomeIcon icon={faBell} />
       </div>
-      <div style={_stylesHoverHeader.comments_icon}>
+      <div style={_stylesHoverHeader.comments_icon} onMouseEnter={() => {
+         
+          setRightButton('#F0F0F0');
+        }}
+        onMouseOut={() => setRightButton('white')}>
           <FontAwesomeIcon icon={faCommentDots} />
       </div>
-      <div style={_stylesHoverHeader.user_icon}>
+      <div style={_stylesHoverHeader.user_icon} onMouseEnter={() => {
+          setRightButton('#F0F0F0');
+        }}
+        onMouseOut={() => setRightButton('white')}>
           <FontAwesomeIcon  icon={faUser} />
       </div>
       
-      <div  style={_stylesHoverHeader.angle_icon}>
+      <div  style={_stylesHoverHeader.angle_icon} onMouseEnter={() => {
+
+          setRightButton('#F0F0F0');
+        }}
+        onMouseOut={() => setRightButton('white')}>
           <FontAwesomeIcon icon={faAngleDown} />
       </div>  
 
